@@ -1,0 +1,85 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 0 0% 3.9%;
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 3.9%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 3.9%;
+
+    --primary: 186 55% 53%; /* #51BDC0 */
+    --primary-foreground: 0 0% 98%;
+    --secondary: 328 93% 47%; /* #E5087E */
+    --secondary-foreground: 0 0% 98%;
+    --accent: 341 77% 67%; /* #ED6AA4 */
+    --accent-foreground: 0 0% 98%;
+
+    --muted: 186 45% 75%; /* Soft cyan */
+    --muted-foreground: 186 30% 30%;
+
+    --border: 328 50% 60%; /* Softer pink */
+    --input: 328 50% 60%;
+    --ring: 186 55% 53%;
+
+    --chart-1: 186 55% 45%;
+    --chart-2: 328 90% 55%;
+    --chart-3: 341 77% 75%;
+    --chart-4: 186 55% 60%;
+    --chart-5: 328 80% 40%;
+
+    --radius: 0.5rem;
+  }
+
+  .dark {
+    --background: 0 0% 3.9%;
+    --foreground: 0 0% 98%;
+    --card: 0 0% 3.9%;
+    --card-foreground: 0 0% 98%;
+    --popover: 0 0% 3.9%;
+    --popover-foreground: 0 0% 98%;
+
+    --primary: 186 55% 53%; /* #51BDC0 */
+    --primary-foreground: 0 0% 98%;
+    --secondary: 328 93% 47%; /* #E5087E */
+    --secondary-foreground: 0 0% 98%;
+    --accent: 341 77% 67%; /* #ED6AA4 */
+    --accent-foreground: 0 0% 98%;
+
+    --muted: 186 45% 25%;
+    --muted-foreground: 186 45% 85%;
+
+    --border: 328 50% 50%;
+    --input: 328 50% 50%;
+    --ring: 186 55% 53%;
+
+    --chart-1: 186 55% 45%;
+    --chart-2: 328 90% 55%;
+    --chart-3: 341 77% 75%;
+    --chart-4: 186 55% 60%;
+    --chart-5: 328 80% 40%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
