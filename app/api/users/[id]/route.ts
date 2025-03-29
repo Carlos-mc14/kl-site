@@ -1,5 +1,3 @@
-"use client"
-
 import { type NextRequest, NextResponse } from "next/server"
 import { getServerSession } from "next-auth/next"
 import { authOptions } from "@/lib/auth"
@@ -7,7 +5,6 @@ import dbConnect from "@/lib/mongodb"
 import User from "@/lib/models/user"
 import Role from "@/lib/models/role"
 import { z } from "zod"
-import { useParams } from "next/navigation"
 
 // Esquema de validación para actualizar usuario
 const updateUserSchema = z.object({
@@ -17,9 +14,9 @@ const updateUserSchema = z.object({
   password: z.string().min(8).optional(),
 })
 
-export async function GET() {
+export async function GET(req: NextRequest, { params }: { params: { id: string } }) {
   try {
-    const { id } = useParams();
+    const id = params.id
     const session = await getServerSession(authOptions)
 
     // Verificar autenticación y permisos
@@ -42,9 +39,9 @@ export async function GET() {
   }
 }
 
-export async function PUT(req: NextRequest) {
+export async function PUT(req: NextRequest, { params }: { params: { id: string } }) {
   try {
-    const { id } = useParams();
+    const id = params.id
     const session = await getServerSession(authOptions)
 
     // Verificar autenticación y permisos
@@ -94,9 +91,9 @@ export async function PUT(req: NextRequest) {
   }
 }
 
-export async function DELETE() {
+export async function DELETE(req: NextRequest, { params }: { params: { id: string } }) {
   try {
-    const { id } = useParams();
+    const id = params.id
     const session = await getServerSession(authOptions)
 
     // Verificar autenticación y permisos

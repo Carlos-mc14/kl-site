@@ -1,7 +1,7 @@
 "use client"
 
 import { useState, useEffect } from "react"
-import { useParams, useRouter } from "next/navigation"
+import { useRouter } from "next/navigation"
 import { useSession } from "next-auth/react"
 import { z } from "zod"
 import { useForm } from "react-hook-form"
@@ -43,8 +43,8 @@ interface User {
   isActive: boolean
 }
 
-export default function EditUserPage() {
-  const { id } = useParams();
+export default function EditUserPage({ params }: { params: { id: string } }) {
+  const id = params.id
   const { data: session, status } = useSession()
   const router = useRouter()
   const [isLoading, setIsLoading] = useState(false)
@@ -78,7 +78,7 @@ export default function EditUserPage() {
         setRoles(rolesData.roles)
 
         // Cargar usuario
-        const userResponse = await fetch(`/api/users/${id}`);
+        const userResponse = await fetch(`/api/users/${id}`)
         const userData = await userResponse.json()
 
         if (!userResponse.ok) {
