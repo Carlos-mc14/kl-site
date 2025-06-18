@@ -139,7 +139,7 @@ export default function ContactForm() {
                   Teléfono <span className="text-red-500">*</span>
                 </FormLabel>
                 <FormControl>
-                  <Input placeholder="+123 456 7890" {...field} />
+                  <Input placeholder="+52 33 20395094" {...field} />
                 </FormControl>
                 <FormMessage />
               </FormItem>

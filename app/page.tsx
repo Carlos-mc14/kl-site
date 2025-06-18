@@ -763,7 +763,7 @@ export default function Home() {
                   </div>
                   <div>
                     <p className="font-medium">Teléfono</p>
-                    <p className="text-gray-500">+123 456 7890</p>
+                    <p className="text-gray-500">+52 33 20395094</p>
                   </div>
                 </div>
                 <div className="flex items-start gap-4">
@@ -795,7 +795,7 @@ export default function Home() {
                   </div>
                   <div>
                     <p className="font-medium">Dirección</p>
-                    <p className="text-gray-500">Calle Principal 123, Ciudad, País</p>
+                    <p className="text-gray-500">Guadalajara, México</p>
                   </div>
                 </div>
               </div>

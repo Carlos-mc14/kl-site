@@ -142,22 +142,22 @@ export async function POST(request: NextRequest) {
     const msgClient = {
       to: email,
       from: "no-reply@kothler.com", // Cambia esto a un email verificado en SendGrid
-      subject: "📩 ¡Hemos recibido tu solicitud! - Nexius Team",
+      subject: "📩 ¡Hemos recibido tu solicitud! - Kothler Team",
       text: `
         Hola ${nombre},
         
-        Gracias por comunicarte con Nexius. Hemos recibido tu mensaje y nuestro equipo lo revisará a la brevedad.
+        Gracias por comunicarte con Kothler. Hemos recibido tu mensaje y nuestro equipo lo revisará a la brevedad.
         
         Si necesitas asistencia adicional, puedes contactarnos en cualquier momento a contacto@kothler.com.
         
         Atentamente,
-        El equipo de Nexius
+        El equipo de Kothler
       `,
       html: `
         <div style="font-family: Arial, sans-serif; color: #333; max-width: 600px; margin: 0 auto; padding: 20px; border: 1px solid #ddd; border-radius: 8px; background-color: #f9f9f9;">
           <h2 style="color: #0056b3; text-align: center;">¡Hemos recibido tu mensaje!</h2>
           <p>Hola <strong>${nombre}</strong>,</p>
-          <p>Gracias por comunicarte con <strong>Nexius</strong>. Hemos recibido tu mensaje y nuestro equipo lo revisará a la brevedad.</p>
+          <p>Gracias por comunicarte con <strong>Kothler</strong>. Hemos recibido tu mensaje y nuestro equipo lo revisará a la brevedad.</p>
           <p>Si necesitas asistencia adicional, no dudes en escribirnos a <a href="mailto:contacto@kothler.com" style="color: #0056b3; text-decoration: none;">contacto@kothler.com</a>.</p>
           <hr style="border: none; border-top: 1px solid #ddd;">
         </div>

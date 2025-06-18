@@ -82,7 +82,7 @@ export default function Navbar() {
           >
             <div className="flex flex-row items-center border-b pb-4">
               <Link href="/" className="cursor-pointer text-black-600 font-bold text-xl pt-4 ps-4">
-                NEXIUS
+                KOTHLER
               </Link>
               <button onClick={toggleMobileMenu} className="absolute top-4 right-4 text-slate-600 hover:text-black-500">
                 <svg

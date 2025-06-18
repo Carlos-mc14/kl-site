@@ -5,7 +5,7 @@ import { RecaptchaProvider } from "@/components/recaptcha-provider"
 import { SessionProvider } from "@/components/session-provider"
 import type { Metadata } from "next"
 import { Inter } from "next/font/google"
-import { Github, Linkedin, Facebook, Phone } from "lucide-react"
+import { Github, Linkedin, Facebook, Phone, Instagram } from "lucide-react"
 import Link from "next/link"
 import "@/styles/globals.css"
 
@@ -44,25 +44,16 @@ export default function RootLayout({
                       <h3 className="text-lg font-bold">Nuestras redes</h3>
                       <div className="space-y-2">
                         <a
-                          href="https://linkedin.com/in/asdasd"
+                          href="https://www.instagram.com/kothler.mkt"
                           target="_blank"
                           rel="noopener noreferrer"
                           className="flex items-center space-x-3 text-gray-400 hover:text-white"
                         >
-                          <Linkedin size={20} />
-                          <span>Linkedin</span>
+                          <Instagram size={20} />
+                          <span>Instagram</span>
                         </a>
                         <a
-                          href="https://github.com/asdasd"
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="flex items-center space-x-3 text-gray-400 hover:text-white"
-                        >
-                          <Github size={20} />
-                          <span>Github</span>
-                        </a>
-                        <a
-                          href="https://instagram.com/asdasd"
+                          href="https://www.facebook.com/profile.php?id=61574062746873"
                           target="_blank"
                           rel="noopener noreferrer"
                           className="flex items-center space-x-3 text-gray-400 hover:text-white"
@@ -71,7 +62,7 @@ export default function RootLayout({
                           <span>Facebook</span>
                         </a>
                         <a
-                          href="https://instagram.com/asdasd"
+                          href="https://wa.link/dcahgn"
                           target="_blank"
                           rel="noopener noreferrer"
                           className="flex items-center space-x-3 text-gray-400 hover:text-white"
@@ -100,18 +91,13 @@ export default function RootLayout({
                             Portafolio
                           </Link>
                         </li>
-                        <li>
-                          <Link href="#testimonios" className="text-gray-400 hover:text-white">
-                            Testimonios
-                          </Link>
-                        </li>
                       </ul>
                     </div>
                     <div className="space-y-4">
                       <h3 className="text-lg font-bold">Contacto</h3>
                       <ul className="space-y-2">
-                        <li className="text-gray-400">Lima, Lima, Perú</li>
-                        <li className="text-gray-400">+51 999 999 999</li>
+                        <li className="text-gray-400">Guadalajara, México</li>
+                        <li className="text-gray-400">+52 33 20395094</li>
                         <li className="text-gray-400">contacto@kothler.com</li>
                       </ul>
                     </div>
