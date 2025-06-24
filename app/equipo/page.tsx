@@ -29,10 +29,6 @@ interface ProfileData {
   displayOrder: number
 }
 
-// Add metadata export
-export async function generateMetadata() {
-  return generateSEOMetadata(pageSEOConfigs.team)
-}
 
 // Update the getTeamProfiles function to use caching:
 async function getTeamProfiles() {

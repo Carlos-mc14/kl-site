@@ -6,11 +6,6 @@ import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { generateMetadata as generateSEOMetadata, pageSEOConfigs } from "@/lib/seo"
 
-export async function generateMetadata() {
-  return generateSEOMetadata(pageSEOConfigs.services)
-}
-
-
 interface SearchParams {
   servicio?: string
 }
