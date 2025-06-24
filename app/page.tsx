@@ -11,6 +11,13 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import ContactForm from "@/components/contact-form"
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel"
 
+import { generateMetadata as generateSEOMetadata, pageSEOConfigs } from "@/lib/seo"
+
+// Add metadata export at the top
+export async function generateMetadata() {
+  return generateSEOMetadata(pageSEOConfigs.home)
+}
+
 // Interfaces para los datos dinámicos
 interface Service {
   _id: string

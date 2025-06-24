@@ -5,25 +5,57 @@ import { RecaptchaProvider } from "@/components/recaptcha-provider"
 import { SessionProvider } from "@/components/session-provider"
 import type { Metadata } from "next"
 import { Inter } from "next/font/google"
-import { Github, Linkedin, Facebook, Phone, Instagram } from "lucide-react"
+import { Facebook, Phone, Instagram } from "lucide-react"
 import Link from "next/link"
 import "@/styles/globals.css"
+import {
+  generateMetadata as generateSEOMetadata,
+  defaultSEOConfig,
+  generateOrganizationSchema,
+  generateWebsiteSchema,
+} from "@/lib/seo"
 
 const inter = Inter({ subsets: ["latin"] })
 
-export const metadata: Metadata = {
-  title: "Kothler | Presicion Y Crecimiento",
-  description:
-    "Desarrollamos software a medida, sitios web y sistemas especializados para restaurantes, hoteles y más.",
-}
+export const metadata: Metadata = generateSEOMetadata(defaultSEOConfig)
 
+// Add structured data to the layout:
 export default function RootLayout({
   children,
 }: {
   children: React.ReactNode
 }) {
+  const organizationSchema = generateOrganizationSchema()
+  const websiteSchema = generateWebsiteSchema()
+
   return (
     <html lang="es" className="scroll-smooth" suppressHydrationWarning>
+      <head>
+        {/* Structured Data */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(organizationSchema),
+          }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(websiteSchema),
+          }}
+        />
+
+        {/* Additional SEO tags */}
+        <link rel="canonical" href="https://kothler.com" />
+        <meta name="geo.region" content="MX-JAL" />
+        <meta name="geo.placename" content="Guadalajara" />
+        <meta name="geo.position" content="20.6597;-103.3496" />
+        <meta name="ICBM" content="20.6597, -103.3496" />
+
+        {/* Preconnect to external domains */}
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+      </head>
       <body className={inter.className}>
         <ThemeProvider attribute="class" defaultTheme="light" enableSystem disableTransitionOnChange>
           <SessionProvider>
@@ -114,4 +146,3 @@ export default function RootLayout({
     </html>
   )
 }
-
